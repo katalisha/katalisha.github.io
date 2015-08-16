@@ -69,4 +69,4 @@ Make sure to point out any tech that is fully working
 One last thing
 Before you get there have a pitch ready for yourself. You're going to be meeting a lot of new people so be ready to introduce yourself a lot.
 
-Good luck, see you at the next hackathon
+Good luck, see you at the next hackathon.
