@@ -2,7 +2,7 @@
 layout: post
 title: Should startups invest in patents?
 ---
-Toyota recently announced it would allow competitors to use their new fuel cell technology – patent free. This follows a similar move by electric car manufacturer Tesla, when CEO Elon Musk announced last June that competitors could make fair use of all Tesla patents without fear of litigation. On it’s own the Tesla announcement could be dismissed as an upstart company looking to make waves in an old world industry. Now an established player has also opened their patents, it puts a spotlight on the patent system and its influence on innovation.
+Toyota recently announced it would allow competitors to use their new fuel cell technology – patent free. This follows a similar move by electric car manufacturer Tesla, who's CEO Elon Musk announced last June that competitors could make fair use of all Tesla patents without fear of litigation. On it’s own the Tesla announcement could be dismissed as an upstart company looking to make waves in an old world industry. Now an established player has also opened their patents, it puts a spotlight on the patent system and its influence on innovation.
 
 Patents are a nice concept – I invent something original and if you copy my product I can take legal action. I’m motivated to innovate because my idea is protected. Unfortunately in the real world, the patent system can have a negative effect on innovation. This is particularly true in the startup space where (with motivation already plentiful) many companies don’t bother with them at all.
 
