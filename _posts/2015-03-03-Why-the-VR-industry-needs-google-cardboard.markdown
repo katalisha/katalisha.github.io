@@ -3,7 +3,7 @@ layout: post
 title: Why the VR industry needs Google Cardboard
 ---
 <img src="/images/fulls/google-cardboard.jpg" class="fit image"> 
-In 2012 Oculus VR began the unthinkable task of resurrecting virtual reality(VR), with the release of their Oculus Rift dev kit.This year Sony and Valve will release consumer headsets for their gaming platforms, expanding this generation of VR to the gamering community. Microsoft and Oculus backer Facebook have loftier goals though. They hope to position VR as a new *mainstream* platform. Attracting the mainstream to VR will not be easy. Suprisingly it's the showbag novelty Google Cardboard that might help them get there.
+In 2012 Oculus VR began the unthinkable task of resurrecting virtual reality(VR), with the release of their Oculus Rift dev kit.This year Sony and Valve will release consumer headsets for their gaming platforms, expanding this generation of VR to the gaming community. Microsoft and Oculus backer Facebook have loftier goals though. They hope to position VR as a new *mainstream* platform. Attracting the mainstream to VR will not be easy. Surprisingly it's the show-bag novelty Google Cardboard that might help them get there.
 
 Past evolutions of consumer VR have ultimately been let down by the technology. The smartphone boom has all but solved these problems. All the components required for modern VR - high density screens, accelerometers and high speed on a wearable scale are now ready to power a VR revolution. Gamers will decide if this generation of VR tech is mature enough for consumers. VR and games is a pretty natural fit, but the jury is out on whether VR can become a mainstream platform.
 
