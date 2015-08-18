@@ -2,7 +2,7 @@
 layout: post
 title: The MVP Cycle
 ---
-<img src="/images/fulls/mvp.jpg" class=""> 
+<img src="/images/fulls/mvp.jpg" class="fit image"> 
 
 As a startup entrepreneur or just as an indy developer, time and usually money are scarce resources. Complete focus is what's needed to get things shipped. One strategy is building the minimum viable product(MVP). With SheHacks coming up again I decided to refresh my thoughts on what an MVP really is and how to design one.
 
