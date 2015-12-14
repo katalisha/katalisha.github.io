@@ -5,29 +5,38 @@ title: Swift Optionals, it's Christmas!
 <img src="/images/fulls/present.jpg" class="fit image">
 
 
-One of the trickier concepts when learning Swift is Optionals. Getting a grasp on Optionals is the first challenge for a new Swift developer. Not only are they crucial to building anything in Swift, they're usually a foreign concept as they don't exist in Objective C and popular web languages. So keeping with the season here's my Christmas themed introduction to Swift Optionals.
+Understanding Optionals is the first challenge for any new Swift developer. Not only are they crucial to building anything in Swift, it's generally a foreign concept as they don't exist in Objective C or popular web languages. So in keeping with the season here's my Christmas themed introduction to Swift Optionals.
 
 It was the night before Christmas
 ---------------------------------
-And Santa was checking his list, Mina, Emily and Charlotte had been really good this year so they would get the best present - a Train Set. So he began to program his delivery drones (which of course run on Swift)
+And Santa was programming his delivery drones (which of course run on Swift).
+He checked his list: Mina, Emily and Charlotte were to get the best present - a Train Set!
 
 "Ok drone, here is a Train Set for Emily."
+
 `var emilysPresent = TrainSet()`
+
 Santa had the Train Set ready so no Optional was needed, this var's type is TrainSet
 
 Then Santa had a problem, he couldn't find any more Train Sets and the drone couldn't wait.
 Santa was sure he had another one nearby. "Here drone, take this box, I promise by the time you get to Mina's house there will be a Train Set  inside...because, magic"
+
 `var minasPresent  : TrainSet!`
+
 This var is Optional, specifically it's an implicitly unwrapped optional which means you can use it as a TrainSet type because Santa promised there's a TrainSet inside. So the drone can use it without checking the box first.
 
 Santa was not sure he could find another TrainSet before the droid got to Charlotte's house. So he said "Drone, take this box, I might be able to magic a Train Set in there in time, if not the box will be empty. You'll have to unwrap it before you use it."
-`var charlottesPresent : MilleniumFalcon?`
+
+`var charlottesPresent : TrainSet?`
+
 This var is Optional, it's wrapped so the drone will need to unwrap it and look inside to make sure there is a TrainSet inside before it tries to use it.
 
 When the drone got to Charlottes house it unwrapped the box. If there was a TrainSet inside the box, then the drone would deliver it.
+
 `if let charlottesPresent = charlottesPresent {
   deliver(charlottesPresent)
 }`
+
 Inside the if statement scope charlottesPresent is a now TrainSet type as it's been unwrapped.
 
 The moral of the story
