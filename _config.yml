@@ -1,7 +1,7 @@
 # Site settings
 
 title: Kate Lanyon # Title of your site
-email: kate@katalisha.com # Your contant email
+# email: kate@katalisha.com # Your contant email
 
 description: > # Kate Lanyon - web, iOS, agile, startups
 baseurl: "" # the subpath of your site, e.g. /blog/
