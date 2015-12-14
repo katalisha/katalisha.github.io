@@ -7,17 +7,21 @@ title: Swift Optionals, it's Christmas!
 
 Understanding Optionals is the first challenge for any new Swift developer. Not only are they crucial to building anything in Swift, it's generally a foreign concept as they don't exist in Objective C or popular web languages. So in keeping with the season here's my Christmas themed introduction to Swift Optionals.
 
-It was the night before Christmas
----------------------------------
-And Santa was programming his delivery drones (which of course run on Swift).
+It was the night before Christmas...
+------------------------------------
+Santa was programming his delivery drones (which of course run on Swift).
 He checked his list: Mina, Emily and Charlotte were to get the best present - a Train Set!
 
+Delivery 1
+----------
 "Ok drone, here is a Train Set for Emily."
 
 `var emilysPresent = TrainSet()`
 
 Santa had the Train Set ready so no Optional was needed, this var's type is TrainSet
 
+Delivery 2
+----------
 Then Santa had a problem, he couldn't find any more Train Sets and the drone couldn't wait.
 Santa was sure he had another one nearby. "Here drone, take this box, I promise by the time you get to Mina's house there will be a Train Set  inside...because, magic"
 
@@ -25,6 +29,8 @@ Santa was sure he had another one nearby. "Here drone, take this box, I promise 
 
 This var is Optional, specifically it's an implicitly unwrapped optional which means you can use it as a TrainSet type because Santa promised there's a TrainSet inside. So the drone can use it without checking the box first.
 
+Delivery 3
+----------
 Santa was not sure he could find another TrainSet before the droid got to Charlotte's house. So he said "Drone, take this box, I might be able to magic a Train Set in there in time, if not the box will be empty. You'll have to unwrap it before you use it."
 
 `var charlottesPresent : TrainSet?`
