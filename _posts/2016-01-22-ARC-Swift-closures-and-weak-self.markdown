@@ -39,10 +39,10 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 <table>
 <tr>
 <th>Action</th>
-<th>`var a = MyReferenceType()`</th>
-<th>`var b = MyReferenceType()`</th>
-<th>`a.ref = b`</th>
-<th>`b.ref = a`</th>
+<th><code>var a = MyReferenceType()</code></th>
+<th><code>var b = MyReferenceType()</code></th>
+<th><code>a.ref = b</code></th>
+<th><code>b.ref = a</code></th>
 <th>a deinitialised</th>
 <th>b deinitialised</th>
 </tr>
@@ -53,7 +53,7 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 <td>1</td>
 <td>2</td>
 <td>1</td>
-</td>1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>Object B retain count</td>
@@ -66,11 +66,11 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 </tr>
 </table>
 
-At the end of this example both objects hold a strong reference to each other so they cannot be destroyed. Even though they are no longer in use.
+At the end of this example both objects hold a strong reference to each other so they cannot be destroyed, even though they are no longer in use.
 
 Weak and unowned references
 ---------------------------
-When it's necessary to have to two objects reference one another the solution is weak and unowned references. These kinds of references do not increment the retain count. So if the `MyReferenceType.ref` property above were declared as weak, the retain counts would work like this:
+When it's necessary to have to two objects reference one another the solution is to use weak and unowned references. These kinds of references do not increment the retain count. So if the `MyReferenceType.ref` property above were declared as weak, the retain counts would work like this:
 <table>
 <tr>
 <th>Action</th>
@@ -160,6 +160,3 @@ Nested functions are slightly more verbose, requiring the weak/unowned variable 
     }
 
 Remember you only need weak self if the nested function is assigned to a property on self, which doesn't happen in this snippet.
-
-
-More about closures [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html).
