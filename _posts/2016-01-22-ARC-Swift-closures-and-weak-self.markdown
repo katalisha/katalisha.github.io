@@ -45,8 +45,8 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 <table>
 <tr>
 <th>Action</th>
-<th>Object 1 retain count</th>
-<th>Object 2 retain count</th>
+<th>Ref 1 retain count</th>
+<th>Ref 2 retain count</th>
 </tr>
 <tr>
 <td><code>var a = MyReferenceType()</code></td>
@@ -88,8 +88,8 @@ When it's necessary to have to two objects reference one another the solution is
 <table>
 <tr>
 <th>Action</th>
-<th>Object A retain count</th>
-<th>Object B retain count</th>
+<th>Ref 1 retain count</th>
+<th>Ref 2 retain count</th>
 </tr>
 <tr>
 <td><code>var a = MyReferenceType()</code></td>
@@ -133,8 +133,8 @@ There are two kinds of closures we're concerned about - nested functions and clo
 
 The things to watch out for are:
 
-1. closures that captures self. This can happen by using an instance property or instance method within a closure; and
-2. the possibility of the closure being assigned to a property of self (either directly or by being assigned to a child of self)
+1. Closures that captures self. This can happen by using an instance property or instance method within a closure; and
+2. The possibility of the closure being assigned to a property of self (either directly or by being assigned to a child of self)
 
 A very common example of these two things occurs when using disposables in [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa).
 
