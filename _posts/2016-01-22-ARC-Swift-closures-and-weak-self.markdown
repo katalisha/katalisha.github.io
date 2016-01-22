@@ -16,13 +16,13 @@ When that use is finished the retain count is reduced.
 When the retain count is 0 the reference can be safely removed.
 
 <table>
-<th>
-<td>Action</td>
-<td>Object A Created</td>
-<td>A Passed to Object B</td>
-<td>B deinit</td>
-<td>A Creator deinit</td>
-</th>
+<tr>
+<th>Action</th>
+<th>Object A Created</th>
+<th>A Passed to Object B</th>
+<th>B deinit</th>
+<th>A Creator deinit</th>
+</tr>
 <tr>
 <td>Retain Count</td>
 <td>1</td>
@@ -38,13 +38,13 @@ Strong Reference Cycles
 One drawback of ARC is that it's possible to create a reference cycle, where two objects reference each other - making it impossible for their retain counts to reach 0.
 
 <table>
-<th>
-<td>Action</td>
-<td>Object A created</td>
-<td>Object A creates Object B</td>
-<td>Object A is passed to Object B</td>
-<td>Object A is release by it's parent</td>
-</th>
+<tr>
+<th>Action</th>
+<th>Object A created</th>
+<th>Object A creates Object B</th>
+<th>Object A is passed to Object B</th>
+<th>Object A is release by it's parent</th>
+</tr>
 <tr>
 <td>Object A retain count</td>
 <td>1</td>
