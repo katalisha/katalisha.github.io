@@ -188,4 +188,4 @@ Remember you only need a weak reference if the nested function is assigned to a 
 
 More code!
 ----------
-I've created a playground with a few examples of strong reference cycles and closures [here](https://github.com/katalisha/weak-self-examples).
+I've created a [playground](https://github.com/katalisha/weak-self-examples) with a few examples of strong reference cycles and closures.
