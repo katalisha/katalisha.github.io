@@ -11,26 +11,24 @@ Let's start by explaining how strong reference cycles happen and why they're bad
 Automatic Reference Counting (ARC)
 ----------------------------------
 iOS uses reference counting to determine when a reference type is no longer in use and it's memory can be freed.
-It's a fairly simple concept: when a reference is in use it's retain count is incremented.
-When that use is finished the retain count is decremented.
+It's a fairly simple concept: when a reference assigned to property, constant or variable it's retain count is incremented.
+When the property, constant or variable is deallocated the retain count is decremented.
 When the retain count is 0 the reference can be safely removed.
 
 <table>
 <tr>
 <th>Action</th>
-<th>Object A Created</th>
-<th>A Passed to Object B</th>
-<th>B deinit</th>
-<th>A Creator deinit</th>
-<th></th>
+<th>`var a = MyReferenceType()`</th>
+<th>`var b = a`</th>
+<th>b deinitialised</th>
+<th>a deinitialised</th>
 </tr>
 <tr>
 <td>Retain Count</td>
 <td>1</td>
 <td>2</td>
 <td>1</td>
-<td>0</td>
-<td>💥</td>
+<td>0💥</td>
 </tr>
 </table>
 
@@ -41,17 +39,56 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 <table>
 <tr>
 <th>Action</th>
-<th>Object A created</th>
-<th>Object A creates Object B</th>
-<th>Object A is passed to Object B</th>
-<th>Object A is release by it's parent</th>
+<th>`var a = MyReferenceType()`</th>
+<th>`var b = MyReferenceType()`</th>
+<th>`a.ref = b`</th>
+<th>`b.ref = a`</th>
+<th>a deinitialised</th>
+<th>b deinitialised</th>
 </tr>
 <tr>
 <td>Object A retain count</td>
 <td>1</td>
 <td>1</td>
+<td>1</td>
 <td>2</td>
 <td>1</td>
+</td>1</td>
+</tr>
+<tr>
+<td>Object B retain count</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</table>
+
+At the end of this example both objects hold a strong reference to each other so they cannot be destroyed. Even though they are no longer in use.
+
+Weak and unowned references
+---------------------------
+When it's necessary to have to two objects reference one another the solution is weak and unowned references. These kinds of references do not increment the retain count. So if the `MyReferenceType.ref` property above were declared as weak, the retain counts would work like this:
+<table>
+<tr>
+<th>Action</th>
+<th>`var a = MyReferenceType()`</th>
+<th>`var b = MyReferenceType()`</th>
+<th>`a.ref = b`</th>
+<th>`b.ref = a`</th>
+<th>a deinitialised</th>
+<th>b deinitialised</th>
+</tr>
+<tr>
+<td>Object A retain count</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0💥</td>
+</td></td>
 </tr>
 <tr>
 <td>Object B retain count</td>
@@ -59,33 +96,34 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 <td>1</td>
 <td>1</td>
 <td>1</td>
+<td>1</td>
+<td>0💥</td>
 </tr>
 </table>
 
-At the end of this example both objects hold a reference to each other so they cannot be destroyed. Even though they are no longer in use.
-
-Examples of strong reference cycles in documentation tend to be fairly contrived and it's pretty easy to see when bad composition is going to create one. However Swift closures and their ability to automatically capture surrounding scope, make it difficult to spot any reference cycles accidentally created this way.
+You can read more about ARC and weak and unowned references [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html).
 
 Reference Cycles in Closures
 ----------------------------
-There are two kinds of [closures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html) we're concerned about - nested functions and closure expressions (yes nested functions are closure too!)
+Examples of strong reference cycles in documentation tend to be fairly contrived and it's pretty easy to see when bad composition could create one. However Swift closures and their ability to automatically capture surrounding scope, make it difficult to spot any reference cycles accidentally created this way.
 
-The two things to watch out for are:
+There are two kinds of closures we're concerned about - nested functions and closure expressions (yes nested functions are closure too!)
+
+The things to watch out for are:
 
 1. closures that captures self. This can happen by using an instance property or instance method within a closure; and
 2. the possibility of the closure being assigned to a property of self (either directly or by being assigned to a child of self)
 
 A very common example of these two things occurs when using disposables in [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa).
 
-
     import ReactiveCocoa
 
     class Thing {
-      var disposable:Disposable
+      var disposable:Disposable?
       var total:Int = 0
 
       deinit {
-        disposable.dispose()
+        disposable?.dispose()
       }
 
       init(producer:SignalProducer<Int,NoError>) {
@@ -123,5 +161,5 @@ Nested functions are slightly more verbose, requiring the weak/unowned variable 
 
 Remember you only need weak self if the nested function is assigned to a property on self, which doesn't happen in this snippet.
 
-You can read more about ARC and weak and unowned references [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html).
+
 More about closures [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html).
