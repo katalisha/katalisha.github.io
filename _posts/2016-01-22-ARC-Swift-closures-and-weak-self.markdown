@@ -48,12 +48,12 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 <th>Ref 2 retain count</th>
 </tr>
 <tr>
-<td><code>var a = MyReferenceType()</code></td>
+<td><code>var a = MyReferenceType() // Ref 1</code></td>
 <td>1</td>
 <td>0</td>
 </tr>
 <tr>
-<td><code>var b = MyReferenceType()</code></td>
+<td><code>var b = MyReferenceType() // Ref 2</code></td>
 <td>1</td>
 <td>1</td>
 </tr>
@@ -91,12 +91,12 @@ When it's necessary to have to two objects reference one another the solution is
 <th>Ref 2 retain count</th>
 </tr>
 <tr>
-<td><code>var a = MyReferenceType()</code></td>
+<td><code>var a = MyReferenceType() // Ref 1</code></td>
 <td>1</td>
 <td>0</td>
 </tr>
 <tr>
-<td><code>var b = MyReferenceType()</code></td>
+<td><code>var b = MyReferenceType() // Ref 2</code></td>
 <td>1</td>
 <td>1</td>
 </tr>
