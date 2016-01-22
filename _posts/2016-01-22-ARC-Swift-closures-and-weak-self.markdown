@@ -11,8 +11,8 @@ Let's start by explaining how strong reference cycles happen and why they're bad
 Automatic Reference Counting (ARC)
 ----------------------------------
 iOS uses reference counting to determine when a reference type is no longer in use and it's memory can be freed.
-It's a fairly simple concept: when a reference is in use it's retain count is increased.
-When that use is finished the retain count is reduced.
+It's a fairly simple concept: when a reference is in use it's retain count is incremented.
+When that use is finished the retain count is decremented.
 When the retain count is 0 the reference can be safely removed.
 
 <table>
