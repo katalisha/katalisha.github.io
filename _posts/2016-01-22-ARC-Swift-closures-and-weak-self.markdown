@@ -78,25 +78,24 @@ The two things to watch out for are:
 
 A very common example of these two things occurs when using disposables in [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa).
 
-```
-import ReactiveCocoa
 
-class Thing {
-  var disposable:Disposable
-  var total:Int = 0
+  import ReactiveCocoa
 
-  deinit {
-    disposable.dispose()
-  }
+  class Thing {
+    var disposable:Disposable
+    var total:Int = 0
 
-  init(producer:SignalProducer<Int,NoError>) {
-    disposable = producer.startWithNext{number in
-      self.total += number
-      print(self.total)
+    deinit {
+      disposable.dispose()
+    }
+
+    init(producer:SignalProducer<Int,NoError>) {
+      disposable = producer.startWithNext{number in
+        self.total += number
+        print(self.total)
+      }
     }
   }
-}
-```
 
 In this example the closure captures self through the use of the `total` property. This adds to self's retain count.
 This is ok so long as it is possible for the closure's own retain count can reach 0, releasing self and allowing it to be destroyed.
@@ -107,23 +106,19 @@ Solutions
 ---------------------------
 Closure expressions provide a *closure capture list* to change the strength of these references
 
-```
-disposable = producer.startWithNext{[weak self] number in
-  self?.total += number
-  print(self?.total)
-}
-```
+  disposable = producer.startWithNext{[weak self] number in
+    self?.total += number
+    print(self?.total)
+  }
 
 Nested functions are slightly more verbose, requiring the weak/unowned variable to be created in the outer function, then captured by the nested function.
 
-```
-func outer() {
-  weak var this = self
-  func inner() {
-    this.number += 1
+  func outer() {
+    weak var this = self
+    func inner() {
+      this.number += 1
+    }
   }
-}
-```
 
 Remember you only need weak self if the nested function is assigned to a property on self, which doesn't happen in this snippet.
 
