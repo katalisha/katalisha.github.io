@@ -3,8 +3,6 @@ layout: post
 title: Swift Optionals, it's Christmas!
 ---
 <img src="/images/fulls/present.jpg" class="fit image">
-
-
 Understanding Optionals is the first challenge for any new Swift developer. Not only are they crucial to building anything in Swift, it's generally a foreign concept as they don't exist in Objective C or popular web languages. So in keeping with the season here's my Christmas themed introduction to Swift Optionals.
 
 It was the night before Christmas...

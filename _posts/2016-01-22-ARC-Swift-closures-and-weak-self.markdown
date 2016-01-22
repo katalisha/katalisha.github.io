@@ -3,7 +3,6 @@ layout: post
 title: ARC, Swift closures and weak self
 ---
 <img src="/images/fulls/swallowed_a_fly.jpg" class="fit image">
-
 A commonly misunderstood/unknown feature of Swift closures is the *closure capture list*. It tells a closure how strongly to capture variables from the surrounding scope. This is useful in avoiding strong reference cycles which can prevent memory being freed when it's no longer needed - a memory leak.
 
 Let's start by explaining how strong reference cycles happen and why they're bad.
