@@ -15,16 +15,52 @@ It's a fairly simple concept: when a reference is in use it's retain count is in
 When that use is finished the retain count is reduced.
 When the retain count is 0 the reference can be safely removed.
 
-Action      | Object A Created | A Passed to Object B | B deinit | A Creator deinit |    |
-Retain Count| 1                | 2                    | 1        | 0                | 💥 |
+<table>
+<th>
+<td>Action</td>
+<td>Object A Created</td>
+<td>A Passed to Object B</td>
+<td>B deinit</td>
+<td>A Creator deinit</td>
+<td></td>
+</th>
+<tr>
+<td>Retain Count</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>💥</td>
+</tr>
+</table>
 
 Strong Reference Cycles
 -----------------------
 One drawback of ARC is that it's possible to create a reference cycle, where two objects reference each other - making it impossible for their retain counts to reach 0.
 
-Action                | Object A created | Object A creates Object B | Object A is passed to Object B | Object A is release by it's parent |
-Object A retain count | 1                | 1                         | 2                              | 1                                  |
-Object B retain count | 0                | 1                         | 1                              | 1                                  |
+<table>
+<th>
+<td>Action</td>
+<td>Object A created</td>
+<td>Object A creates Object B</td>
+<td>Object A is passed to Object B</td>
+<td>Object A is release by it's parent</td>
+</th>
+<tr>
+<td>Object A retain count</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Object B retain count</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</td>1</td>
+</tr>
+</table>
 
 At the end of this example both objects hold a reference to each other so they cannot be destroyed. Even though they are no longer in use.
 
