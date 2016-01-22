@@ -102,7 +102,7 @@ This is ok so long as it is possible for the closure's own retain count can reac
 The problem occurs when a reference to the closure is kept by the disposable property.
 This creates the cycle - the closure can't release self util self releases the closure.
 
-Solutions
+Closure Capture Lists
 ---------------------------
 Closure expressions provide a *closure capture list* to change the strength of these references
 
@@ -111,6 +111,8 @@ Closure expressions provide a *closure capture list* to change the strength of t
       print(self?.total)
     }
 
+What about nested functions?
+----------------------------
 Nested functions are slightly more verbose, requiring the weak/unowned variable to be created in the outer function, then captured by the nested function.
 
     func outer() {
