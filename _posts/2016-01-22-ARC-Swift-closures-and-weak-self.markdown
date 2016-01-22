@@ -78,7 +78,7 @@ The two things to watch out for are:
 
 A very common example of these two things occurs when using disposables in [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa).
 
-```swift
+```
 import ReactiveCocoa
 
 class Thing {
@@ -107,15 +107,16 @@ Solutions
 ---------------------------
 Closure expressions provide a *closure capture list* to change the strength of these references
 
-```swift
+```
 disposable = producer.startWithNext{[weak self] number in
   self?.total += number
   print(self?.total)
-}````
+}
+```
 
 Nested functions are slightly more verbose, requiring the weak/unowned variable to be created in the outer function, then captured by the nested function.
 
-```swift
+```
 func outer() {
   weak var this = self
   func inner() {
