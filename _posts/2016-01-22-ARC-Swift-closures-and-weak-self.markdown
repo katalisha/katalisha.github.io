@@ -22,7 +22,6 @@ When the retain count is 0 the reference can be safely removed.
 <td>A Passed to Object B</td>
 <td>B deinit</td>
 <td>A Creator deinit</td>
-<td></td>
 </th>
 <tr>
 <td>Retain Count</td>
