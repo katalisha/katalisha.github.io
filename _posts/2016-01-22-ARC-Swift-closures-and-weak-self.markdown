@@ -185,3 +185,5 @@ Nested functions are slightly more verbose, requiring the weak/unowned variable 
 
 In this example when `self` is weakly assigned to `this` it does not increment selfs retain count. The closure captures `this` instead of `self` so it doesn't increment the retain count on `self` either.
 Remember you only need a weak reference if the nested function is assigned to a property on self, which doesn't actually happen in this snippet.
+
+I've created a playground with a few examples of strong reference cycles and closures [here](https://github.com/katalisha/weak-self-examples).
