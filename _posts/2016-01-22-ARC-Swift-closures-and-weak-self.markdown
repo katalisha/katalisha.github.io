@@ -18,16 +18,22 @@ When the retain count is 0 the reference can be safely removed.
 <table>
 <tr>
 <th>Action</th>
-<th><code>var a = MyReferenceType()</code></th>
-<th><code>var b = a</code></th>
-<th>b deinitialised</th>
-<th>a deinitialised</th>
+<th>Retain Count</th>
 </tr>
 <tr>
-<td>Retain Count</td>
+<td><code>var a = MyReferenceType()</code></td>
 <td>1</td>
+</tr>
+<tr>
+<td><code>var b = a</code></td>
 <td>2</td>
+</tr>
+<tr>
+<td>b deinitialised</td>
 <td>1</td>
+</tr>
+<tr>
+<td>a deinitialised</td>
 <td>0💥</td>
 </tr>
 </table>
@@ -39,29 +45,37 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 <table>
 <tr>
 <th>Action</th>
-<th><code>var a = MyReferenceType()</code></th>
-<th><code>var b = MyReferenceType()</code></th>
-<th><code>a.ref = b</code></th>
-<th><code>b.ref = a</code></th>
-<th>a deinitialised</th>
-<th>b deinitialised</th>
+<th>Object A retain count</th>
+<th>Object B retain count</th>
 </tr>
 <tr>
-<td>Object A retain count</td>
+<td><code>var a = MyReferenceType()</code></td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Object B retain count</td>
 <td>0</td>
+</tr>
+<tr>
+<td><code>var b = MyReferenceType()</code></td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>a.ref = b</code></td>
 <td>1</td>
 <td>2</td>
+</tr>
+<tr>
+<td><code>b.ref = a</code></td>
 <td>2</td>
 <td>2</td>
+</tr>
+<tr>
+<td>a deinitialised</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>b deinitialised</td>
+<td>1</td>
 <td>1</td>
 </tr>
 </table>
@@ -74,29 +88,37 @@ When it's necessary to have to two objects reference one another the solution is
 <table>
 <tr>
 <th>Action</th>
-<th>`var a = MyReferenceType()`</th>
-<th>`var b = MyReferenceType()`</th>
-<th>`a.ref = b`</th>
-<th>`b.ref = a`</th>
-<th>a deinitialised</th>
-<th>b deinitialised</th>
+<th>Object A retain count</th>
+<th>Object B retain count</th>
 </tr>
 <tr>
-<td>Object A retain count</td>
+<td>`var a = MyReferenceType()`</td>
 <td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>0💥</td>
-</td></td>
-</tr>
-<tr>
-<td>Object B retain count</td>
 <td>0</td>
+</tr>
+<tr>
+<td>`var b = MyReferenceType()`</td>
 <td>1</td>
 <td>1</td>
+</tr>
+<tr>
+<td>`a.ref = b`</td>
 <td>1</td>
 <td>1</td>
+</tr>
+<tr>
+<td>`b.ref = a`</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>a deinitialised</td>
+<td>0💥</td>
+<td>1</td>
+</tr>
+<tr>
+<td>b deinitialised</td>
+</td></td>
 <td>0💥</td>
 </tr>
 </table>
