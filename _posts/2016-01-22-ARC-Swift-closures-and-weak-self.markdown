@@ -36,7 +36,7 @@ When the retain count is 0 the reference can be safely removed.
 
 Strong Reference Cycles
 -----------------------
-One drawback of ARC is that it's possible to create a reference cycle, where two objects reference each other - making it impossible for their retain counts to reach 0.
+One drawback of ARC is that it's possible to create a strong reference cycle, where two objects reference each other - making it impossible for their retain counts to reach 0.
 
 <table>
 <tr>
@@ -64,8 +64,7 @@ One drawback of ARC is that it's possible to create a reference cycle, where two
 
 At the end of this example both objects hold a reference to each other so they cannot be destroyed. Even though they are no longer in use.
 
-Examples of strong reference cycles in documentation tend to be fairly contrived and it's pretty easy to avoid in practice.
-However Swift closures have the ability to automatically capture their surrounding scope, making it more difficult to spot any reference cycles accidentally created this way.
+Examples of strong reference cycles in documentation tend to be fairly contrived and it's pretty easy to see when bad composition is going to create one. However Swift closures and their ability to automatically capture surrounding scope, make it difficult to spot any reference cycles accidentally created this way.
 
 Reference Cycles in Closures
 ----------------------------
@@ -73,8 +72,8 @@ There are two kinds of [closures](https://developer.apple.com/library/ios/docume
 
 The two things to watch out for are:
 
-1. closures that captures self. This can happen by using an instance property or instance method within a closure.
-2. the possibility of that closure itself being assigned to self (either directly or by being assigned to a child of self)
+1. closures that captures self. This can happen by using an instance property or instance method within a closure; and
+2. the possibility of the closure being assigned to a property of self (either directly or by being assigned to a child of self)
 
 A very common example of these two things occurs when using disposables in [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa).
 
