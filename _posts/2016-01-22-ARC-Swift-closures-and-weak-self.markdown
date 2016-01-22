@@ -4,9 +4,9 @@ title: ARC, Swift closures and weak self
 ---
 <img src="/images/fulls/swallowed_a_fly.jpg" class="fit image">
 
-A commonly misunderstood/unknown feature of Swift closures is the *closure capture list*. It tells a closure how strongly to capture variables from the surrounding scope. This is useful in avoiding strong reference cycles. Strong reference cycles can prevent memory being freed when it's no longer needed - a memory leak.
+A commonly misunderstood/unknown feature of Swift closures is the *closure capture list*. It tells a closure how strongly to capture variables from the surrounding scope. This is useful in avoiding strong reference cycles which can prevent memory being freed when it's no longer needed - a memory leak.
 
-Let's start at the beginning by explaining how strong reference cycles happen and why they're bad.
+Let's start by explaining how strong reference cycles happen and why they're bad.
 
 Automatic Reference Counting (ARC)
 ----------------------------------
@@ -22,6 +22,7 @@ When the retain count is 0 the reference can be safely removed.
 <th>A Passed to Object B</th>
 <th>B deinit</th>
 <th>A Creator deinit</th>
+<th></th>
 </tr>
 <tr>
 <td>Retain Count</td>
@@ -71,12 +72,14 @@ Reference Cycles in Closures
 There are two kinds of [closures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html) we're concerned about - nested functions and closure expressions (yes nested functions are closure too!)
 
 The two things to watch out for are:
-1. closures that capture self. This can happen by using an instance property or instance method within a closure.
+
+1. closures that captures self. This can happen by using an instance property or instance method within a closure.
 2. the possibility of that closure itself being assigned to self (either directly or by being assigned to a child of self)
 
 A very common example of these two things occurs when using disposables in [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa).
 
-`import ReactiveCocoa
+```swift
+import ReactiveCocoa
 
 class Thing {
   var disposable:Disposable
@@ -92,7 +95,8 @@ class Thing {
       print(self.total)
     }
   }
-}`
+}
+```
 
 In this example the closure captures self through the use of the `total` property. This adds to self's retain count.
 This is ok so long as it is possible for the closure's own retain count can reach 0, releasing self and allowing it to be destroyed.
@@ -103,19 +107,22 @@ Solutions
 ---------------------------
 Closure expressions provide a *closure capture list* to change the strength of these references
 
-`disposable = producer.startWithNext{[weak self] number in
+```swift
+disposable = producer.startWithNext{[weak self] number in
   self?.total += number
   print(self?.total)
-}`
+}````
 
 Nested functions are slightly more verbose, requiring the weak/unowned variable to be created in the outer function, then captured by the nested function.
 
-`func outer() {
+```swift
+func outer() {
   weak var this = self
   func inner() {
     this.number += 1
   }
-}`
+}
+```
 
 Remember you only need weak self if the nested function is assigned to a property on self, which doesn't happen in this snippet.
 
