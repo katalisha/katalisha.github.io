@@ -18,8 +18,8 @@ When the retain count is 0 the reference can be safely removed.
 <table>
 <tr>
 <th>Action</th>
-<th>`var a = MyReferenceType()`</th>
-<th>`var b = a`</th>
+<th><code>var a = MyReferenceType()</code></th>
+<th><code>var b = a</code></th>
 <th>b deinitialised</th>
 <th>a deinitialised</th>
 </tr>
