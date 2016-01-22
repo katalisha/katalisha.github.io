@@ -11,9 +11,9 @@ Let's start by explaining how strong reference cycles happen and why they're bad
 Automatic Reference Counting (ARC)
 ----------------------------------
 iOS uses reference counting to determine when a reference type is no longer in use and it's memory can be freed.
-It's a fairly simple concept: when a reference assigned to property, constant or variable it's retain count is incremented.
+It's a fairly simple concept - when a reference is assigned to property, constant or variable it's retain count is incremented.
 When the property, constant or variable is deallocated the retain count is decremented.
-When the retain count is 0 the reference can be safely removed.
+When the retain count is 0 the reference is no longure in use and the memory can be freed.
 
 <table>
 <tr>
@@ -40,13 +40,13 @@ When the retain count is 0 the reference can be safely removed.
 
 Strong Reference Cycles
 -----------------------
-One drawback of ARC is that it's possible to create a strong reference cycle, where two objects reference each other - making it impossible for their retain counts to reach 0.
+One drawback of ARC is that it's possible to create a strong reference cycle, where two objects refer to each other - making it impossible for their retain counts to reach 0.
 
 <table>
 <tr>
 <th>Action</th>
-<th>Object A retain count</th>
-<th>Object B retain count</th>
+<th>Object 1 retain count</th>
+<th>Object 2 retain count</th>
 </tr>
 <tr>
 <td><code>var a = MyReferenceType()</code></td>
@@ -92,22 +92,22 @@ When it's necessary to have to two objects reference one another the solution is
 <th>Object B retain count</th>
 </tr>
 <tr>
-<td>`var a = MyReferenceType()`</td>
+<td><code>var a = MyReferenceType()</code></td>
 <td>1</td>
 <td>0</td>
 </tr>
 <tr>
-<td>`var b = MyReferenceType()`</td>
+<td><code>var b = MyReferenceType()</code></td>
 <td>1</td>
 <td>1</td>
 </tr>
 <tr>
-<td>`a.ref = b`</td>
+<td><code>a.ref = b</code></td>
 <td>1</td>
 <td>1</td>
 </tr>
 <tr>
-<td>`b.ref = a`</td>
+<td><code>b.ref = a</code></td>
 <td>1</td>
 <td>1</td>
 </tr>
@@ -118,7 +118,7 @@ When it's necessary to have to two objects reference one another the solution is
 </tr>
 <tr>
 <td>b deinitialised</td>
-</td></td>
+<td></td>
 <td>0💥</td>
 </tr>
 </table>
@@ -127,9 +127,9 @@ You can read more about ARC and weak and unowned references [here](https://devel
 
 Reference Cycles in Closures
 ----------------------------
-Examples of strong reference cycles in documentation tend to be fairly contrived and it's pretty easy to see when bad composition could create one. However Swift closures and their ability to automatically capture surrounding scope, make it difficult to spot any reference cycles accidentally created this way.
+Examples of strong reference cycles in documentation tend to be fairly contrived and it's pretty easy to see when bad composition could create one. However Swift closures and their ability to automatically capture surrounding scope, make it harder to spot any reference cycles accidentally created this way.
 
-There are two kinds of closures we're concerned about - nested functions and closure expressions (yes nested functions are closure too!)
+There are two kinds of closures we're concerned about - nested functions and closure expressions (yes nested functions are closures too!)
 
 The things to watch out for are:
 
@@ -170,6 +170,8 @@ Closure expressions provide a *closure capture list* to change the strength of t
       print(self?.total)
     }
 
+In this example self is not retained by the closure - it's retain count will not be incremented by closure capturing it and no cycle is created.
+
 What about nested functions?
 ----------------------------
 Nested functions are slightly more verbose, requiring the weak/unowned variable to be created in the outer function, then captured by the nested function.
@@ -181,4 +183,5 @@ Nested functions are slightly more verbose, requiring the weak/unowned variable 
       }
     }
 
-Remember you only need weak self if the nested function is assigned to a property on self, which doesn't happen in this snippet.
+In this example when `self` is weakly assigned to `this` it does not increment selfs retain count. The closure captures `this` instead of `self` so it doesn't increment the retain count on `self` either.
+Remember you only need a weak reference if the nested function is assigned to a property on self, which doesn't actually happen in this snippet.
