@@ -79,7 +79,7 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 </tr>
 </table>
 
-At the end of this example both objects hold a strong reference to each other so they cannot be destroyed, even though they are no longer in use.
+At the end of this example both objects hold a strong reference to each other so they cannot be destroyed, even though they are no longer in scope.
 
 Weak and unowned references
 ---------------------------
