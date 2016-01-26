@@ -192,6 +192,7 @@ What's the point?
 There is a temptation to add weak self to the capture closure list everytime. This will always avoid a possible memory leak but can add complexity and unexpected behaviour in certain cases. Also look out for nested functions which are closures in disguise.
 
 You must use weak/unowned references if:
+
 1. Closures that captures self. This can happen by using an instance property or instance method within a closure; and
 2. The possibility of the closure being assigned to a property of self (either directly or by being assigned to a child of self)
 
