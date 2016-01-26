@@ -122,6 +122,8 @@ When it's necessary to have to two objects reference one another the solution is
 </tr>
 </table>
 
+The memory is freed. However weak and unowned references should be used with care. This example highlights the they complexity introduce - Ref 1 has been freed while Ref 2 was using it. Thought needs to be put in to the design for how to handle this possibility.
+
 You can read more about ARC and weak and unowned references [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html).
 
 Reference Cycles in Closures
@@ -185,6 +187,14 @@ Nested functions are slightly more verbose, requiring the weak/unowned variable 
 In this example when `self` is weakly assigned to `this` it does not increment selfs retain count. The closure captures `this` instead of `self` so it doesn't increment the retain count on `self` either.
 Remember you only need a weak reference if the nested function is assigned to a property on self, which doesn't actually happen in this snippet.
 
-More code!
+What's the point?
+-----------------
+There is a temptation to add weak self to the capture closure list everytime. This will always avoid a possible memory leak but can add complexity and unexpected behaviour in certain cases. Also look out for nested functions which are closures in disguise.
+
+You must use weak/unowned references if:
+1. Closures that captures self. This can happen by using an instance property or instance method within a closure; and
+2. The possibility of the closure being assigned to a property of self (either directly or by being assigned to a child of self)
+
+Show Me Some code!
 ----------
 I've created a [playground](https://github.com/katalisha/weak-self-examples) with a few examples of strong reference cycles and closures.
