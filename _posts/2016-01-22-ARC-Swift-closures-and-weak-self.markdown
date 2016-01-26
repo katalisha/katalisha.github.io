@@ -12,7 +12,7 @@ Automatic Reference Counting (ARC)
 iOS uses reference counting to determine when a reference type is no longer in use and it's memory can be freed.
 It's a fairly simple concept - when a reference is assigned to property, constant or variable it's retain count is incremented.
 When the property, constant or variable is deallocated the retain count is decremented.
-When the retain count is 0 the reference is no longure in use and the memory can be freed.
+When the retain count is 0 the reference is no longer in use and the memory can be freed.
 
 <table>
 <tr>
