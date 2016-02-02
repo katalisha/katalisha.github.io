@@ -11,7 +11,7 @@ Automatic Reference Counting (ARC)
 ----------------------------------
 iOS uses reference counting to determine when a reference type is no longer in use and it's memory can be freed.
 It's a fairly simple concept - when a reference is assigned to property, constant or variable it's retain count is incremented.
-When the property, constant or variable is deallocated the retain count is decremented.
+When the property, constant or variable moves out of scope the retain count of the references is decremented.
 When the retain count is 0 the reference is no longer in use and the memory can be freed.
 
 <table>
@@ -28,11 +28,11 @@ When the retain count is 0 the reference is no longer in use and the memory can 
 <td>2</td>
 </tr>
 <tr>
-<td>b deinitialised</td>
+<td>b out of scope</td>
 <td>1</td>
 </tr>
 <tr>
-<td>a deinitialised</td>
+<td>a out of scope</td>
 <td>0💥</td>
 </tr>
 </table>
@@ -68,12 +68,12 @@ One drawback of ARC is that it's possible to create a strong reference cycle, wh
 <td>2</td>
 </tr>
 <tr>
-<td>a deinitialised</td>
+<td>a out of scope</td>
 <td>1</td>
 <td>2</td>
 </tr>
 <tr>
-<td>b deinitialised</td>
+<td>b out of scope</td>
 <td>1</td>
 <td>1</td>
 </tr>
@@ -111,12 +111,12 @@ When it's necessary to have to two objects reference one another the solution is
 <td>1</td>
 </tr>
 <tr>
-<td>a deinitialised</td>
+<td>a out of scope</td>
 <td>0💥</td>
 <td>1</td>
 </tr>
 <tr>
-<td>b deinitialised</td>
+<td>b out of scope</td>
 <td></td>
 <td>0💥</td>
 </tr>
@@ -184,7 +184,7 @@ Nested functions are slightly more verbose, requiring the weak/unowned variable 
       }
     }
 
-In this example when `self` is weakly assigned to `this` it does not increment selfs retain count. The closure captures `this` instead of `self` so it doesn't increment the retain count on `self` either.
+In this example when `self` is weakly assigned to `this` it does not increment self's retain count. The closure captures `this` instead of `self` so it doesn't increment the retain count on `self` either.
 Remember you only need a weak reference if the nested function is assigned to a property on self, which doesn't actually happen in this snippet.
 
 What's the point?
