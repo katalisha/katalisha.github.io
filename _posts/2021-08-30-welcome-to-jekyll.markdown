@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Idealcast #20: Covid-19 & Just in Time Supply Chains"
+title:  "Making Work Visible by Dominica DeGrandis"
 date:   2021-08-29 12:47:33 +1000
 categories: jekyll update
 ---
