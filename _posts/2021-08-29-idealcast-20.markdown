@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Idealcast #20: Exploring COVID-19 and Just-In-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy"
+title:  "A Culture where Change is Ordinary"
 date:   2021-08-29 12:47:33 +1000
 categories: jekyll update
 ---
