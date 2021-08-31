@@ -1,13 +1,19 @@
 ---
 layout: post
-title:  "A Culture where Change is Ordinary"
+title:  "\"A Culture where Change is Ordinary\""
 date:   2021-08-29 12:47:33 +1000
-categories: jekyll update
+categories: devOps
+tags: [idealcast, podcasts]
+excerpt_separator: <!--more-->
+
 ---
+Idealcast #20: Exploring COVID-19 and Just-in-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy
+
 <iframe title="The Idealcast with Gene Kim by IT Revolution" allowtransparency="true" height="150" width="600px" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=mdugt-76d6eb-pbblog-playlist&share=1&download=1&skin=eeeeee&btn-skin=8bbb4e&size=315" allowfullscreen=""></iframe>
+
+<!--more-->
 
 ![My helpful screenshot][notes]
 
 [notes]: /assets/img/idealcast20.png
-[source]: https://itrevolution.com/the-idealcast-episode-20/
 

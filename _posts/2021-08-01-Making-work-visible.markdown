@@ -2,9 +2,18 @@
 layout: post
 title:  "Get Feedback and Deliver Value Fast"
 date:   2021-08-29 12:47:33 +1000
-categories: jekyll update
+categories: productivity
+tags: books
+excerpt_separator: <!--more-->
+
 ---
+
+Making Work Visible: Exposing Time Theft to Optimize Work & flow by by Dominica Degrandis
+_via IT Revolution Book Club_
+
 [![Book][goodreads]{: width="600" }][source]
+
+<!--more-->
 
 ![My helpful screenshot][notes]
 
