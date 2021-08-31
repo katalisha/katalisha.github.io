@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Scaling Trust and Purpose"
-date:   2021-08-29 12:47:33 +1000
+date:   2021-01-10 18:07:33 +1000
 categories: leadership
 tags: books
 excerpt_separator: <!--more-->

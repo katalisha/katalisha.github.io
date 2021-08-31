@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "\"A Culture where Change is Ordinary\""
-date:   2021-08-29 12:47:33 +1000
+date:   2021-08-26 19:45:33 +1000
 categories: devOps
 tags: [idealcast, podcasts]
 excerpt_separator: <!--more-->

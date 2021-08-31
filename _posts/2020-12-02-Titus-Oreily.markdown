@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The difference between a job and a hobby"
-date:   2021-07-01 12:47:33 +1000
+date:   2020-12-02 19:59:33 +1000
 categories: popular
 tags: [wilosophy, podcasts]
 excerpt_separator: <!--more-->
