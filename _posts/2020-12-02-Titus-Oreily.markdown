@@ -15,5 +15,5 @@ Wilosophy #194: Getting Wilosophical with Titus O'Reily
 <iframe width="500" height="200" src="https://webplayer.whooshkaa.com/player/episode/id/752415?sharing=true&visual=true&wmode=opaque" frameborder="0" style="width: 600px; height: 200px"></iframe>
 
 
-[notes]: /assets/img/wilosophy_to.png
+[notes]: /assets/img/notes/wilosophy_to.png
 

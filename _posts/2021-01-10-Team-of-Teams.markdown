@@ -5,7 +5,7 @@ date:   2021-01-10 18:07:33 +1000
 categories: leadership
 tags: books
 summary: "Team of Teams: New Rules of Engagement for a Complex World by General Stanley McChrystal"
-thumbnail: "<img src=\"/assets/img/totgoodreads.png\" width=\"600\">"
+thumbnail: "<img src=\"/assets/img/thumbnails/totgoodreads.png\" width=\"600\">"
 
 ---
 
@@ -16,6 +16,6 @@ Team of Teams: New Rules of Engagement for a Complex World by General Stanley Mc
 [![Book][goodreads]{: width="600" }][source]
 
 
-[notes]: /assets/img/teamofteams.png
+[notes]: /assets/img/notes/teamofteams.png
 [source]: https://www.goodreads.com/book/show/22529127-team-of-teams
-[goodreads]: /assets/img/totgoodreads.png
+[goodreads]: /assets/img/thumbnails/totgoodreads.png
