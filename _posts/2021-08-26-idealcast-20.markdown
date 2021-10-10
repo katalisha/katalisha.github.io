@@ -4,14 +4,15 @@ title:  "\"A Culture where Change is Ordinary\""
 date:   2021-08-26 19:45:33 +1000
 categories: devOps
 tags: [idealcast, podcasts]
-excerpt_separator: <!--more-->
+summary: "<u>Idealcast #20:</u> Exploring COVID-19 and Just-in-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy"
+iframe: "<iframe title='Exploring COVID-19 and Just-in-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy' allowtransparency='true' height='150' width='600px' style='border: none; min-width: min(100%, 430px);' scrolling='no' data-name='pb-iframe-player' src='https://www.podbean.com/player-v2/?i=yhu8g-10a860c-pb&from=embed&share=1&download=1&skin=eeeeee&btn-skin=8bbb4e&size=150'></iframe>"
+preview: /assets/img/previews/idealcast20.png
 
 ---
 Idealcast #20: Exploring COVID-19 and Just-in-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy
 
+![Notes for idealcast #20][notes]
+
 <iframe title="Exploring COVID-19 and Just-in-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy" allowtransparency="true" height="150" width="600px" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=yhu8g-10a860c-pb&from=embed&share=1&download=1&skin=eeeeee&btn-skin=8bbb4e&size=150"></iframe>
-<!--more-->
 
-![My helpful screenshot][notes]
-
-[notes]: /assets/img/idealcast20.png
+[notes]: /assets/img/notes/idealcast20.png

@@ -20,7 +20,7 @@ description: >
   I hear and I forget. I see and I remember. I do and I understand -Confucius
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://katalisha.com" # the base hostname & protocol for your site, e.g. http://example.com
-show_excerpts: true
+# show_excerpts: true
 minima:
   skin: classic
   social_links:
