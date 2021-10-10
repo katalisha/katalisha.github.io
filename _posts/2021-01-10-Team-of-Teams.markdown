@@ -4,7 +4,7 @@ title:  "Scaling Trust and Purpose"
 date:   2021-01-10 18:07:33 +1000
 categories: leadership
 tags: books
-summary: "Team of Teams: New Rules of Engagement for a Complex World by General Stanley McChrystal"
+summary: "<u>Team of Teams:</u> New Rules of Engagement for a Complex World by General Stanley McChrystal"
 thumbnail: "<img src=\"/assets/img/thumbnails/totgoodreads.png\" width=\"600\">"
 preview: /assets/img/previews/teamofteams.png
 
