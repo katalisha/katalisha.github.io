@@ -4,13 +4,12 @@ title:  "\"Move fast and break things is no longer defensible\""
 date:   2020-11-21 10:42:33 +1000
 categories: accessibility
 tags: [typehuman, podcasts]
-excerpt_separator: <!--more-->
+summary: "TypeHuman Podcast Episode #3: Jenny Davis: Affordance thinking and responsible technologies"
+iframe: "<iframe width=\"600\" height=\"200\" src=\"https://www.youtube.com/embed/QBwYMH6KNPQ\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
 ---
 TypeHuman Podcast Episode #3: Jenny Davis: Affordance thinking and responsible technologies
 
 <iframe width="600" height="200" src="https://www.youtube.com/embed/QBwYMH6KNPQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<!--more-->
 
 ![My helpful screenshot][notes]
 

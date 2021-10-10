@@ -21,28 +21,56 @@ layout: default
     {%- if page.list_title -%}
     <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
+
+    <style>
+        .post-list .post {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-list .post .preview {
+            float: left;
+            width: 130px;
+        }
+
+        .post-list .post .content {
+            float: left;
+            width: 800px;
+        }
+    </style>
     <ul class="post-list">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {%- for post in posts -%}
         <li>
-
-            <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                    {{ post.title | escape }}
-                </a>
-            </h3>
-            {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-            {{ post.thumbnail}}
-            {%- endif -%}
-            <p class="post-meta">{{ post.date | date: date_format }}
-                {% for category in post.categories %}
-                <code><nobr>{{ category }}</nobr></code>
-                {% endfor %}
-                {% for tag in post.tags %}
-                <code><nobr>{{ tag }}</nobr></code>
-                {% endfor %}
-            </p>
+            <div class="title">
+                <h3>
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </h3>
+                <p>
+                    {{ post.summary }}
+                </p>
+            </div>
+            <div class="post">
+                <div class="preview">
+                    <a href="{{ post.url | relative_url }}">
+                        <img src="https://dummyimage.com/100x144/000/fff">
+                    </a>
+                </div>
+                <div class="content">
+                    {{ post.iframe }}
+                    {{ post.thumbnail}}
+                    <p class="post-meta">{{ post.date | date: date_format }}
+                        {% for category in post.categories %}
+                        <code><nobr>{{ category }}</nobr></code>
+                        {% endfor %}
+                        {% for tag in post.tags %}
+                        <code><nobr>{{ tag }}</nobr></code>
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
             <hr>
         </li>
         {%- endfor -%}
