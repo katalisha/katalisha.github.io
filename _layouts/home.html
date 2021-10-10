@@ -21,23 +21,6 @@ layout: default
     {%- if page.list_title -%}
     <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-
-    <style>
-        .post-list .post {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .post-list .post .preview {
-            float: left;
-            width: 180px;
-        }
-
-        .post-list .post .content {
-            float: left;
-            width: 660px;
-        }
-    </style>
     <ul class="post-list">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {%- for post in posts -%}
@@ -55,7 +38,7 @@ layout: default
             <div class="post">
                 <div class="preview">
                     <a href="{{ post.url | relative_url }}">
-                        <img src="https://dummyimage.com/150x200/000/fff">
+                        <img src="{{ post.preview }}">
                     </a>
                 </div>
                 <div class="content">

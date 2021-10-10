@@ -6,6 +6,8 @@ categories: technology
 tags: explainer
 summary: Explaining passwordless authentication in pictures
 thumbnail: <img src="/assets/img/thumbnails/pwthumbnail.png" width="600">
+preview: /assets/img/previews/passwordless.png
+
 ---
 
 Explaining passwordless authentication in pictures.

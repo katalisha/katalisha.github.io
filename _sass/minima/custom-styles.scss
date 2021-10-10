@@ -1,0 +1,29 @@
+.post-list .post {
+    position: relative;
+    overflow: visible;
+}
+
+.post-list .post .preview {
+    float: left;
+    width: 160px;
+}
+
+.post-list .post .preview img {
+    float: left;
+    width: 125px;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #bc13fe,
+                0 0 0.8rem #bc13fe,
+                0 0 2.8rem #bc13fe,
+                inset 0 0 1.3rem #bc13fe;
+}
+
+.post-list .post .content {
+    float: left;
+    width: 660px;
+}
+

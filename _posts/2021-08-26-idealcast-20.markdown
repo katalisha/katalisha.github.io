@@ -6,6 +6,7 @@ categories: devOps
 tags: [idealcast, podcasts]
 summary: "Idealcast #20: Exploring COVID-19 and Just-in-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy"
 iframe: "<iframe title='Exploring COVID-19 and Just-in-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy' allowtransparency='true' height='150' width='600px' style='border: none; min-width: min(100%, 430px);' scrolling='no' data-name='pb-iframe-player' src='https://www.podbean.com/player-v2/?i=yhu8g-10a860c-pb&from=embed&share=1&download=1&skin=eeeeee&btn-skin=8bbb4e&size=150'></iframe>"
+preview: /assets/img/previews/idealcast20.png
 
 ---
 Idealcast #20: Exploring COVID-19 and Just-in-Time Supply Chains, Chaos Engineering, and the Soviet Centrally Planned Economy
