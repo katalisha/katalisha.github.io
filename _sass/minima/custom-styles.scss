@@ -1,29 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body {
+    font-family: 'Indie Flower', cursive;
+}
+
 .post-list .post {
     position: relative;
-    overflow: visible;
 }
 
 .post-list .post .preview {
-    float: left;
-    width: 160px;
+    display: inline-block;
+    width: 180px;
+    vertical-align: top;
 }
 
 .post-list .post .preview img {
-    float: left;
+    display: inline-block;
     width: 125px;
-    border: 0.2rem solid #fff;
-    border-radius: 2rem;
     padding: 0.4em;
-    box-shadow: 0 0 .2rem #fff,
-                0 0 .2rem #fff,
-                0 0 2rem #bc13fe,
-                0 0 0.8rem #bc13fe,
-                0 0 2.8rem #bc13fe,
-                inset 0 0 1.3rem #bc13fe;
+    box-shadow: 0 0 0.8rem grey;
+
 }
 
 .post-list .post .content {
-    float: left;
+    display: inline-block;
     width: 660px;
 }
 
