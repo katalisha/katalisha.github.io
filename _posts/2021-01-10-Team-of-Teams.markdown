@@ -11,9 +11,10 @@ thumbnail: "<img src=\"/assets/img/totgoodreads.png\" width=\"600\">"
 
 Team of Teams: New Rules of Engagement for a Complex World by General Stanley McChrystal
 
+![Notes for Team of Teams][notes]
+
 [![Book][goodreads]{: width="600" }][source]
 
-![My helpful screenshot][notes]
 
 [notes]: /assets/img/teamofteams.png
 [source]: https://www.goodreads.com/book/show/22529127-team-of-teams

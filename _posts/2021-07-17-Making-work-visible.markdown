@@ -13,9 +13,9 @@ thumbnail: "<img src=\"/assets/img/mwvgoodreads.png\" width=\"600\">"
 Making Work Visible: Exposing Time Theft to Optimize Work & flow by by Dominica Degrandis
 _via IT Revolution Book Club_
 
-[![Book][goodreads]{: width="600" }][source]
+![Notes for Making work visible][notes]
 
-![My helpful screenshot][notes]
+[![Book][goodreads]{: width="600" }][source]
 
 [notes]: /assets/img/Making_Work_Visible.png
 [source]: https://www.goodreads.com/en/book/show/36458712

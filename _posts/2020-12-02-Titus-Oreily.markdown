@@ -10,10 +10,10 @@ iframe: "<iframe width=\"500\" height=\"200\" src=\"https://webplayer.whooshkaa.
 ---
 Wilosophy #194: Getting Wilosophical with Titus O'Reily
 
+![Notes for Wilosophy #194][notes]
+
 <iframe width="500" height="200" src="https://webplayer.whooshkaa.com/player/episode/id/752415?sharing=true&visual=true&wmode=opaque" frameborder="0" style="width: 600px; height: 200px"></iframe>
 
-
-![My helpful screenshot][notes]
 
 [notes]: /assets/img/wilosophy_to.png
 

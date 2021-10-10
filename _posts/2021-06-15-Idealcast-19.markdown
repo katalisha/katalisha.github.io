@@ -9,10 +9,9 @@ iframe: "<iframe title=\"Unleashing Human Creativity To Deliver 8K+ COVID Vaccin
 ---
 Idealcast #19: Unleashing Human Creativity To Deliver 8K+ COVID Vaccines Per Day and Improve the Overall Healthcare System
 
+![Notes for Idealcast #19][notes]
+
 <iframe title="Unleashing Human Creativity To Deliver 8K+ COVID Vaccines Per Day and Improve the Overall Healthcare System" allowtransparency="true" height="150" width="600" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=d8vfh-105d9dd-pb&from=embed&share=1&download=1&skin=eeeeee&btn-skin=8bbb4e&size=150"></iframe>
-
-
-![My helpful screenshot][notes]
 
 [notes]: /assets/img/idealcast19.png
 
