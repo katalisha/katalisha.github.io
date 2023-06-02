@@ -34,7 +34,7 @@ markdown: kramdown
 
 plugins:
   - jekyll-remote-theme
-remote_theme: jekyll/minima
+remote_theme: jekyll/minima@41b9769
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
