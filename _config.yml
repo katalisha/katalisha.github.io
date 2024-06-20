@@ -34,8 +34,8 @@ markdown: kramdown
 
 plugins:
   - jekyll-remote-theme
-remote_theme: jekyll/minima@41b9769
-
+  - jekyll-feed
+remote_theme: jekyll/minima@41b9769 #minima master branch
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
