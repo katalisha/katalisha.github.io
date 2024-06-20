@@ -34,6 +34,10 @@ body {
     width: 660px;
 }
 
+.very-readable {
+    font-family: $base-font-family
+}
+
 span.highlight {
 font-weight: bolder;
 background: linear-gradient(104deg, rgba(255, 130, 207,0) 0.9%, rgba(255, 130, 207,1.25) 2.4%, rgba(255, 130, 207, 0.5) 5.8%, rgba(255, 130, 207,0.1) 93%, rgba(255, 130, 207,0.7) 96%, rgba(255, 130, 2072,0) 98%), linear-gradient(183deg, rgba(255, 130, 207,0) 0%, rgba(255, 130, 207,0.3) 7.9%, rgba(255, 130, 207,0) 15%);
