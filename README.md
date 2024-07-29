@@ -1,6 +1,4 @@
-Setup local environment
-`gem install bundler --user-install`
-`bundle install` or `bundle update`
+# Run locally
 
-To create the webserver
-`bundle exec jekyll serve`
+`docker run --rm -it -p 4000:4000 --volume="$(pwd):/src/site" $(docker build -q .)`
+note: it may take time to build the image and there will be no output until that happens.
